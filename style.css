@@ -17,9 +17,16 @@ header {
   background: #55d6aa;
 }
 
+.TextWrap {
+  float: right;
+  margin: 10px;
+  margin-right: 2in;
+}
+
 p {
-  margin-left: 10px;
-  padding-left: 10px 0;
+  margin-left: 2in;
+  padding-left: 2in 0;
+  font-size: 180%;
 }
 
 h1 {
