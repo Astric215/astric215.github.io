@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 body {
 	margin: 0;
+  height: 100%;
 	background: rgb(255, 255, 255);
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
@@ -41,11 +42,45 @@ footer {
   margin-left: 20px;
 }
 
+.contact_text {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  padding-top: 10px;
+  margin-left: 20px;
+  color: rgb(255, 255, 255);
+}
+
 .content {
   margin-left: 2in;
   margin-right: 2in;
   /*padding-left: 2in;*/
   font-size: 180%;
+}
+
+.game_items {
+  margin-left: 2in;
+  margin-right: 2in;
+  margin-top: 30px;
+  margin-bottom: auto;
+  padding-bottom: 600px;
+  size: 100px;
+}
+
+.game_tile {
+  padding-right: 50px;
+  font-size: 100%;
+  width: 306px;
+  float: left;
+  
+}
+
+.game_thumb {
+  width: 306px;
+  height: 243px;
+}
+
+.game_text {
+  overflow-wrap: normal;
 }
 
 h1 {
