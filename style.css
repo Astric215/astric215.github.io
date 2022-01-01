@@ -62,7 +62,7 @@ footer {
   margin-right: 2in;
   margin-top: 30px;
   margin-bottom: auto;
-  padding-bottom: 600px;
+  padding-bottom: 100px;
   size: 100px;
 }
 
@@ -75,12 +75,33 @@ footer {
 }
 
 .game_thumb {
-  width: 306px;
-  height: 243px;
+  width: 350px;
+  height: 277px;
+  padding-right: 200px;
+}
+
+.game_ss {
+  width: 443px;
+  height: 277px;
 }
 
 .game_text {
   overflow-wrap: normal;
+  padding-right: 50px;
+  font-size: 100%;
+  /*width: 1800px;*/
+  float: left;
+}
+
+.game_title {
+  overflow-wrap: normal;
+  padding-left: 50px;
+  font-size: 100%;
+  width: 1800px;
+  float: left;
+  color: rgb(0, 0, 0);
+  font-family: verdana;
+  font-size: 200%;
 }
 
 h1 {
