@@ -66,6 +66,15 @@ footer {
   justify-content: space-around;
 }
 
+.gallery_items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 1in;
+  padding-right: 1in;
+  margin-top: 0.25in;
+}
+
 .game_tile {
   padding-right: 50px;
   padding-left: 50px;
@@ -90,13 +99,16 @@ footer {
 .game_ss {
   width: 443px;
   height: 277px;
+  margin: 0.1in
 }
 
 
 .game_text {
   overflow-wrap: normal;
-  padding-right: 50px;
+  margin: 0.5in;
   font-size: 100%;
+  display:block;
+  text-align: center;
 }
 
 .game_title {
@@ -110,6 +122,34 @@ footer {
   /*display: flex;
   justify-content: center;
   align-items: center;*/
+}
+
+.sub_title {
+  display:block;
+  width: 100%;
+  text-align: center;
+  color: #6698da;
+  font-family: Georgia;
+  font-size: 150%;
+  margin-bottom: 15px;
+}
+
+.large_title {
+  display:block;
+  width: 100%;
+  text-align: center;
+  color: #6698da;
+  font-family: Georgia;
+  font-size: 250%;
+  margin-bottom: 15px;
+}
+
+.below_text {
+  display:block;
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-bottom: 15px;
 }
 
 h1 {
