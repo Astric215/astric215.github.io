@@ -92,8 +92,6 @@ footer {
 .game_thumb {
   width: 350px;
   height: 277px;
-  padding-left: 5%;
-  padding-bottom: 5%;
 }
 
 .game_ss {
@@ -131,6 +129,16 @@ footer {
   color: #6698da;
   font-family: Georgia;
   font-size: 150%;
+  margin-bottom: 15px;
+}
+
+.role_title {
+  display:block;
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: verdana;
+  font-size: 100%;
   margin-bottom: 15px;
 }
 
