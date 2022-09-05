@@ -5,6 +5,7 @@ body {
 	background: rgb(255, 255, 255);
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
+  color: #777
 }
 
 .container {
@@ -19,6 +20,7 @@ header {
   margin: 200;
   padding: 10px 0;
   background: #6698da;
+  background-size: cover;
 }
 
 .TextWrap {
@@ -33,6 +35,7 @@ footer {
   margin: 0;
   background-color: rgb(68, 67, 67);
   position: static;
+  background-size: cover;
   bottom: 0px;
 }
 
@@ -58,26 +61,30 @@ footer {
 }
 
 .game_items {
-  margin-left: 2in;
-  margin-right: 2in;
-  margin-top: 30px;
-  margin-bottom: auto;
-  padding-bottom: 100px;
-  size: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .game_tile {
   padding-right: 50px;
+  padding-left: 50px;
   font-size: 100%;
   width: 306px;
-  float: left;
-  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game_div {
+  margin: 30px;
 }
 
 .game_thumb {
   width: 350px;
   height: 277px;
-  padding-right: 200px;
+  padding-left: 5%;
+  padding-bottom: 5%;
 }
 
 .game_ss {
@@ -90,19 +97,19 @@ footer {
   overflow-wrap: normal;
   padding-right: 50px;
   font-size: 100%;
-  /*width: 1800px;*/
-  float: left;
 }
 
 .game_title {
-  overflow-wrap: normal;
-  padding-left: 50px;
-  font-size: 100%;
-  width: 1800px;
-  float: left;
+  display:block;
+  width: 100%;
+  text-align: center;
   color: rgb(0, 0, 0);
   font-family: verdana;
   font-size: 200%;
+  margin-bottom: 15px;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
 }
 
 h1 {
