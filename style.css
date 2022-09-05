@@ -2,7 +2,7 @@
 body {
 	margin: 0;
   height: 100%;
-	background: rgb(255, 255, 255);
+	background: rgb(27, 28, 35);
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
   color: #777
@@ -103,7 +103,7 @@ footer {
   display:block;
   width: 100%;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: #6698da;
   font-family: verdana;
   font-size: 200%;
   margin-bottom: 15px;
