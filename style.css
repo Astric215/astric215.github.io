@@ -103,8 +103,10 @@ footer {
 
 .game_text {
   overflow-wrap: normal;
-  margin: 0.5in;
-  font-size: 100%;
+  margin-left: 2in;
+  margin-right: 2in;
+  color:rgb(128, 128, 128);
+  font-size: 125%;
   display:block;
   text-align: center;
 }
@@ -117,9 +119,6 @@ footer {
   font-family: verdana;
   font-size: 200%;
   margin-bottom: 15px;
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
 }
 
 .sub_title {
