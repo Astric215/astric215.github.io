@@ -47,26 +47,19 @@
     // any rate limiting you can change it here.
     var MAPBOX_TOKEN = 'pk.eyJ1IjoiYXN0cmljIiwiYSI6ImNscDV2YnV5ZTA5cDQyaXIzd3NlZmFhcWMifQ.TtsXy2_vUB_sFqb1zL0e0g';
 
-    window.addEventListener('load',function() {
-      var fetchInterval = 5000;
-      setInterval(fetchstatus, fetchInterval);
-    });
-
-    function fetchstatus(){
-      fetch('https://api.thingspeak.com/channels/' + THINGSPEAK_CHANNEL_ID + '/feeds.json?results=' + NUMBER_OF_POINTS)
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(json) {
-          var points = json.feeds.map(function(point) {
-            return {
-              coords: [parseFloat(point.field3), parseFloat(point.field2)],
-              time: point.created_at
-            };
-          });
-          draw(points);
+    fetch('https://api.thingspeak.com/channels/' + THINGSPEAK_CHANNEL_ID + '/feeds.json?results=' + NUMBER_OF_POINTS)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(json) {
+        var points = json.feeds.map(function(point) {
+          return {
+            coords: [parseFloat(point.field3), parseFloat(point.field2)],
+            time: point.created_at
+          };
         });
-      }
+        draw(points);
+      });
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
