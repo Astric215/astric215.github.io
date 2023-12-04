@@ -5,9 +5,12 @@
   <title>RCA Santa Tracker</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <meta itemprop="description" content="Santa Tracker">
-  <meta itemprop="image" content='www.daviddiazgames/images/santa.png'>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet">
+  <meta itemprop="image" content='images/santa.png'>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.3/timeago.min.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
   <!--define the style of the page-->
   <style>
     body {
@@ -76,7 +79,7 @@
           });
   
           map.loadImage(
-           'https://www.daviddiazgames.com/images/santa.png',
+           'https://daviddiazgames.com/images/santa.png',
            (error, image) => {
               if (error) throw error;
    
@@ -177,5 +180,5 @@
       });
   </script>
   
-</body>
+  </body>
 </html>
