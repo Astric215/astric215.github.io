@@ -10,6 +10,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.3/timeago.min.js"></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
+  <!--define the style of the page-->
   <style>
     body {
       margin: 0;
@@ -47,6 +48,11 @@
     // any rate limiting you can change it here.
     var MAPBOX_TOKEN = 'pk.eyJ1IjoiYXN0cmljIiwiYSI6ImNscDV2YnV5ZTA5cDQyaXIzd3NlZmFhcWMifQ.TtsXy2_vUB_sFqb1zL0e0g';
 
+
+
+
+
+    
     fetch('https://api.thingspeak.com/channels/' + THINGSPEAK_CHANNEL_ID + '/feeds.json?results=' + NUMBER_OF_POINTS)
       .then(function(response) {
         return response.json();
@@ -63,9 +69,11 @@
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
-    function draw(points) {
+    function draw(points, map) {
+      //get most recent point
       var monument = points[points.length - 1];
 
+      //defines the map
       var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -74,7 +82,7 @@
       });
 
       map.addControl(new mapboxgl.NavigationControl());
-      // create the popup
+      // create the popup maybe not neccessary
       var text = new timeago().format(monument.time) + "<br />" + monument.coords[0] + ", " + monument.coords[1];
       var popup = new mapboxgl.Popup({
           offset: [0, -30]
@@ -85,7 +93,8 @@
       var el = document.createElement('div');
       el.id = 'marker';
       el.style.backgroundImage = 'url(' + MARKER_ICON + ')';
-
+      
+      //convert the map to coords
       points = points.map(function(point) {
         return point.coords;
       });
@@ -126,6 +135,11 @@
           .addTo(map);
 
       });
+      function yourFunction(){
+    // do whatever you like here
+
+    setTimeout(yourFunction, 5000);
+}
     }
   </script>
 
