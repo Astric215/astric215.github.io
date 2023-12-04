@@ -54,7 +54,8 @@
           center: [-121.366432, 38.541349],
           zoom: 16
      });
-  
+     map.addControl(new mapboxgl.NavigationControl());
+     
       map.on('load', async () => {
           // Get the initial location of the International Space Station (ISS).
           const geojson = await getLocation();
