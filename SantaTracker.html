@@ -51,7 +51,7 @@
       var map = new mapboxgl.Map({
           container: 'map',
           style: 'mapbox://styles/mapbox/streets-v9',
-          center: [-121.366432, 38.541349],
+          center: [ -121.352734,38.552283],
           zoom: 16
      });
      map.addControl(new mapboxgl.NavigationControl());
@@ -136,9 +136,6 @@
                  }
               );
           }, 2000);
-          function provideJson(geojson){
-           return 
-          }
           async function getLocation(updateSource) {
               // Make a GET request to the API and return the location of the ISS.
               try {
