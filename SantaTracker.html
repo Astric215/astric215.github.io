@@ -59,11 +59,41 @@
       map.on('load', async () => {
           // Get the initial location of the International Space Station (ISS).
           const geojson = await getLocation();
+
+          map.addSource('prepath', {
+            type: 'geojson',
+            data:{
+               "type": "Feature",
+               "properties": {},
+               "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                     [-121.361768, 38.556393],
+                     [-121.365391, 38.540175]
+                  ]
+               }
+            }
+          });
           // Add the ISS location as a source.
           map.addSource('iss', {
               type: 'geojson',
               data: geojson
           });
+
+          map.addLayer({
+            "id": "prepath",
+            "type": "line",
+            "source": "prepath",
+            "layout": {
+              "line-join": "round",
+              "line-cap": "round"
+            },
+            "paint": {
+              "line-color": "#FF0000",
+              "line-width": 8
+            }
+          });
+
           // Add the rocket symbol layer to the map.
           map.addLayer({
             "id": "iss",
