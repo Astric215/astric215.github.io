@@ -58,7 +58,7 @@
      
       map.on('load', async () => {
           // Get the initial location of the International Space Station (ISS).
-          const geojson = await getLocation();
+          var geojson = await getLocation();
 
           map.addSource('prepath', {
             type: 'geojson',
@@ -147,10 +147,10 @@
               });
            }
           );
-  
+         
           // Update the source from the API every 2 seconds.
           const updateSource = setInterval(async () => {
-              const geojson = await getLocation(updateSource);
+              geojson = await getLocation(updateSource, geojson);
               map.getSource('iss').setData(geojson);
               map.getSource('point').setData({
                  'type': 'FeatureCollection',
@@ -166,7 +166,7 @@
                  }
               );
           }, 2000);
-          async function getLocation(updateSource) {
+          async function getLocation(updateSource, geojson) {
               // Make a GET request to the API and return the location of the ISS.
               try {
                   const response = await fetch(
@@ -189,16 +189,24 @@
                   points = points.map(function(point) {
                     return point.coords;
                  });
-                  // Return the location of the ISS as GeoJSON.
-                  return {
-                    "type": "Feature",
-                    "properties": {},
-                    "geometry": {
-                       "type": "LineString",
-                       "coordinates": points
-                    }
-        
-                  };
+
+                 var recentTime = monument.time
+                  // Return the location of santa as GeoJSON unless.
+                  if(geojson === undefined || geojson.properties.time <= recentTime){
+                     return {
+                        "type": "Feature",
+                        "properties": {
+                           "time" : recentTime
+                        },
+                        "geometry": {
+                           "type": "LineString",
+                           "coordinates": points
+                        }
+                     };
+                  } else {
+                     console.log("map rewind caught");
+                     return geojson;
+                  }
               } catch (err) {
                   // If the updateSource interval is defined, clear the interval to stop updating the source.
                   if (updateSource) clearInterval(updateSource);
