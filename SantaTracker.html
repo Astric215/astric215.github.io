@@ -291,19 +291,19 @@
                        time: point.created_at
                     };
                  });
-                 const monument = points[points.length - 1]
-                  // Fly the map to the location.
-                  map.flyTo({
-                      center: monument.coords,
-                      speed: 0.5
-                  });
+                 const monument = points[points.length - 1];
                   points = points.map(function(point) {
                     return point.coords;
                  });
-
+               if(!(geojson == undefined)){console.log(geojson.properties.time + "<=" + recentTime);}
                  var recentTime = monument.time
                   // Return the location of santa as GeoJSON unless.
                   if(geojson === undefined || geojson.properties.time <= recentTime){
+                     // Fly the map to the location.
+                     map.flyTo({
+                        center: monument.coords,
+                        speed: 0.5
+                     });
                      return {
                         "type": "Feature",
                         "properties": {
