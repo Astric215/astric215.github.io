@@ -13,6 +13,29 @@ body {
 	margin: 0 auto;
 }
 
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  margin: 10px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #554094;
+  border-color: #0d0806;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -86,12 +109,17 @@ footer {
 }
 
 .game_div {
-  margin: 30px;
+  margin-left: 100px;
 }
 
 .game_thumb {
   width: 350px;
   height: 277px;
+}
+
+.portfolio_preview {
+  width: 800px;
+  height: 640px;
 }
 
 .game_ss {
